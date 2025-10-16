@@ -1,0 +1,206 @@
+[2025-10-10 10:32:07] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:32:07] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:41:41] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:41:41] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:42:17] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:42:17] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:42:17] INFO [werkzeug._log:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5099
+ * Running on http://10.10.167.246:5099
+[2025-10-10 10:42:17] INFO [werkzeug._log:97] [33mPress CTRL+C to quit[0m
+[2025-10-10 10:42:17] INFO [werkzeug._log:97]  * Restarting with stat
+[2025-10-10 10:42:17] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:42:17] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:42:17] WARNING [werkzeug._log:97]  * Debugger is active!
+[2025-10-10 10:42:17] INFO [werkzeug._log:97]  * Debugger PIN: 656-897-337
+[2025-10-10 10:42:59] INFO [werkzeug._log:97]  * Detected change in '/Users/shyamgokuls/Downloads/SecureDigitalWallet-main 6.33.06\u202fPM/backend/app.py', reloading
+[2025-10-10 10:42:59] INFO [werkzeug._log:97]  * Restarting with stat
+[2025-10-10 10:43:00] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:43:00] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:43:00] WARNING [werkzeug._log:97]  * Debugger is active!
+[2025-10-10 10:43:00] INFO [werkzeug._log:97]  * Debugger PIN: 656-897-337
+[2025-10-10 10:43:57] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:43:57] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:45:46] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:45:46] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:46:31] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:46:31] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:46:31] INFO [werkzeug._log:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.167.246:5000
+[2025-10-10 10:46:31] INFO [werkzeug._log:97] [33mPress CTRL+C to quit[0m
+[2025-10-10 10:46:31] INFO [werkzeug._log:97]  * Restarting with stat
+[2025-10-10 10:46:32] INFO [app.__init__:138] ✅ GPT-4o Vision initialized
+[2025-10-10 10:46:32] INFO [app.<module>:335] ✅ System initialization complete
+[2025-10-10 10:46:32] WARNING [werkzeug._log:97]  * Debugger is active!
+[2025-10-10 10:46:32] INFO [werkzeug._log:97]  * Debugger PIN: 656-897-337
+[2025-10-10 10:54:08] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 10:54:08] "GET /health HTTP/1.1" 200 -
+[2025-10-10 10:54:08] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 10:54:08] "GET /health HTTP/1.1" 200 -
+[2025-10-10 10:54:40] ERROR [app.create_error_response:359] not_found: Endpoint not found
+[2025-10-10 10:54:40] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 10:54:40] "[33mGET / HTTP/1.1[0m" 404 -
+[2025-10-10 10:54:40] ERROR [app.create_error_response:359] not_found: Endpoint not found
+[2025-10-10 10:54:40] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 10:54:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-10-10 10:59:35] INFO [werkzeug._log:97]  * Detected change in '/Users/shyamgokuls/Downloads/SecureDigitalWallet-main 6.33.06\u202fPM/backend/app.py', reloading
+[2025-10-10 10:59:35] INFO [werkzeug._log:97]  * Restarting with stat
+[2025-10-10 11:01:56] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 11:01:56] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 11:01:56] INFO [werkzeug._log:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.167.246:5000
+[2025-10-10 11:01:56] INFO [werkzeug._log:97] [33mPress CTRL+C to quit[0m
+[2025-10-10 11:01:56] INFO [werkzeug._log:97]  * Restarting with stat
+[2025-10-10 11:01:56] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 11:01:56] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 11:01:56] WARNING [werkzeug._log:97]  * Debugger is active!
+[2025-10-10 11:01:56] INFO [werkzeug._log:97]  * Debugger PIN: 656-897-337
+[2025-10-10 11:02:24] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:02:24] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:02:24] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:02:24] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:02:49] INFO [app.extract_upload:507] Processing uploaded file: Aadhar_Card.jpg
+[2025-10-10 11:02:49] INFO [app.enhance_image:100] Upscaled image from 640x770 to 1500x1804
+[2025-10-10 11:03:00] INFO [app.extract_from_image:303] ✅ Extraction successful in 11.31s - Type: aadhar
+[2025-10-10 11:03:00] INFO [app.extract_upload:519] Cleaned up: uploads/Aadhar_Card.jpg
+[2025-10-10 11:03:00] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:03:00] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 11:04:29] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:04:29] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:04:29] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:04:29] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:04:34] INFO [app.extract_upload:507] Processing uploaded file: Aadhar_Card.jpg
+[2025-10-10 11:04:35] INFO [app.enhance_image:100] Upscaled image from 640x770 to 1500x1804
+[2025-10-10 11:04:46] INFO [app.extract_from_image:303] ✅ Extraction successful in 11.27s - Type: aadhar
+[2025-10-10 11:04:46] INFO [app.extract_upload:519] Cleaned up: uploads/Aadhar_Card.jpg
+[2025-10-10 11:04:46] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:04:46] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 11:12:35] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:12:35] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:12:35] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:12:35] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:12:45] INFO [app.extract_upload:507] Processing uploaded file: Aadhar_Card.jpg
+[2025-10-10 11:12:46] INFO [app.enhance_image:100] Upscaled image from 640x770 to 1500x1804
+[2025-10-10 11:13:00] INFO [app.extract_from_image:303] ✅ Extraction successful in 14.68s - Type: aadhar
+[2025-10-10 11:13:00] INFO [app.extract_upload:519] Cleaned up: uploads/Aadhar_Card.jpg
+[2025-10-10 11:13:00] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:13:00] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 11:13:23] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:13:23] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:13:23] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:13:23] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:14:29] INFO [app.extract_upload:507] Processing uploaded file: Screenshot_2025-10-10_at_11.14.12_AM.png
+[2025-10-10 11:14:42] INFO [app.extract_from_image:303] ✅ Extraction successful in 12.46s - Type: aadhar
+[2025-10-10 11:14:42] INFO [app.extract_upload:519] Cleaned up: uploads/Screenshot_2025-10-10_at_11.14.12_AM.png
+[2025-10-10 11:14:42] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:14:42] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 11:19:13] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:19:13] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:19:13] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:19:13] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:19:24] INFO [app.extract_upload:507] Processing uploaded file: Aadhar_Card.jpg
+[2025-10-10 11:19:24] INFO [app.enhance_image:100] Upscaled image from 640x770 to 1500x1804
+[2025-10-10 11:19:37] INFO [app.extract_from_image:303] ✅ Extraction successful in 13.10s - Type: aadhar
+[2025-10-10 11:19:37] INFO [app.extract_upload:519] Cleaned up: uploads/Aadhar_Card.jpg
+[2025-10-10 11:19:37] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:19:37] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 11:20:53] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:20:53] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:20:53] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:20:53] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:21:40] INFO [app.extract_upload:507] Processing uploaded file: WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 11:21:51] INFO [app.extract_from_image:303] ✅ Extraction successful in 10.22s - Type: aadhar
+[2025-10-10 11:21:51] INFO [app.extract_upload:519] Cleaned up: uploads/WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 11:21:51] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:21:51] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 11:38:13] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:38:13] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:38:13] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:38:13] "GET /health HTTP/1.1" 200 -
+[2025-10-10 11:38:20] INFO [app.extract_upload:507] Processing uploaded file: WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 11:38:31] INFO [app.extract_from_image:303] ✅ Extraction successful in 11.34s - Type: aadhar
+[2025-10-10 11:38:31] INFO [app.extract_upload:519] Cleaned up: uploads/WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 11:38:31] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 11:38:31] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 12:41:46] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 12:41:46] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 12:42:03] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 12:42:03] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 12:42:03] INFO [werkzeug._log:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.167.246:5000
+[2025-10-10 12:42:03] INFO [werkzeug._log:97] [33mPress CTRL+C to quit[0m
+[2025-10-10 12:42:03] INFO [werkzeug._log:97]  * Restarting with stat
+[2025-10-10 12:42:04] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 12:42:04] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 12:42:04] WARNING [werkzeug._log:97]  * Debugger is active!
+[2025-10-10 12:42:04] INFO [werkzeug._log:97]  * Debugger PIN: 490-753-892
+[2025-10-10 12:56:35] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 12:56:35] "GET /health HTTP/1.1" 200 -
+[2025-10-10 12:56:35] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 12:56:35] "GET /health HTTP/1.1" 200 -
+[2025-10-10 12:56:41] INFO [app.extract_upload:507] Processing uploaded file: THRI2005.png
+[2025-10-10 12:56:41] INFO [app.enhance_image:100] Upscaled image from 742x851 to 1500x1720
+[2025-10-10 12:56:55] INFO [app.extract_from_image:303] ✅ Extraction successful in 13.71s - Type: aadhar
+[2025-10-10 12:56:55] INFO [app.extract_upload:519] Cleaned up: uploads/THRI2005.png
+[2025-10-10 12:56:55] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 12:56:55] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 13:04:42] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:04:42] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:04:42] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:04:42] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:04:49] INFO [app.extract_upload:507] Processing uploaded file: WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:04:58] INFO [app.extract_from_image:303] ✅ Extraction successful in 8.59s - Type: aadhar
+[2025-10-10 13:04:58] INFO [app.extract_upload:519] Cleaned up: uploads/WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:04:58] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:04:58] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 13:15:04] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:15:04] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:15:04] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:15:04] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:15:13] INFO [app.extract_upload:507] Processing uploaded file: THRI2005.png
+[2025-10-10 13:15:13] INFO [app.enhance_image:100] Upscaled image from 742x851 to 1500x1720
+[2025-10-10 13:15:29] INFO [app.extract_from_image:303] ✅ Extraction successful in 16.38s - Type: aadhar
+[2025-10-10 13:15:29] INFO [app.extract_upload:519] Cleaned up: uploads/THRI2005.png
+[2025-10-10 13:15:29] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:15:29] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 13:22:04] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 13:22:04] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 13:22:04] INFO [werkzeug._log:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.167.246:5000
+[2025-10-10 13:22:04] INFO [werkzeug._log:97] [33mPress CTRL+C to quit[0m
+[2025-10-10 13:22:04] INFO [werkzeug._log:97]  * Restarting with stat
+[2025-10-10 13:22:04] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 13:22:04] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 13:22:04] WARNING [werkzeug._log:97]  * Debugger is active!
+[2025-10-10 13:22:05] INFO [werkzeug._log:97]  * Debugger PIN: 948-418-890
+[2025-10-10 13:22:13] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:22:13] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:22:13] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:22:13] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:22:22] INFO [app.extract_upload:507] Processing uploaded file: WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:22:33] INFO [app.extract_from_image:303] ✅ Extraction successful in 10.37s - Type: aadhar
+[2025-10-10 13:22:33] INFO [app.extract_upload:519] Cleaned up: uploads/WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:22:33] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:22:33] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 13:23:03] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:23:03] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:23:03] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:23:03] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:23:14] INFO [app.extract_upload:507] Processing uploaded file: WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:23:24] INFO [app.extract_from_image:303] ✅ Extraction successful in 9.67s - Type: aadhar
+[2025-10-10 13:23:24] INFO [app.extract_upload:519] Cleaned up: uploads/WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:23:24] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:23:24] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 13:26:12] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:26:12] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:26:12] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:26:12] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:26:24] INFO [app.extract_upload:507] Processing uploaded file: WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:26:34] INFO [app.extract_from_image:303] ✅ Extraction successful in 10.03s - Type: aadhar
+[2025-10-10 13:26:34] INFO [app.extract_upload:519] Cleaned up: uploads/WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:26:34] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:26:34] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 13:50:45] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 13:50:45] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 13:50:45] INFO [werkzeug._log:97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.167.246:5000
+[2025-10-10 13:50:45] INFO [werkzeug._log:97] [33mPress CTRL+C to quit[0m
+[2025-10-10 13:50:45] INFO [werkzeug._log:97]  * Restarting with stat
+[2025-10-10 13:50:45] INFO [app.__init__:142] ✅ GPT-4o Vision initialized
+[2025-10-10 13:50:45] INFO [app.<module>:339] ✅ System initialization complete
+[2025-10-10 13:50:45] WARNING [werkzeug._log:97]  * Debugger is active!
+[2025-10-10 13:50:45] INFO [werkzeug._log:97]  * Debugger PIN: 948-418-890
+[2025-10-10 13:51:07] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:51:07] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:51:07] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:51:07] "GET /health HTTP/1.1" 200 -
+[2025-10-10 13:51:17] INFO [app.extract_upload:507] Processing uploaded file: WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:51:27] INFO [app.extract_from_image:303] ✅ Extraction successful in 9.90s - Type: aadhar
+[2025-10-10 13:51:27] INFO [app.extract_upload:519] Cleaned up: uploads/WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 13:51:27] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 13:51:27] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 14:02:43] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:02:43] "GET /health HTTP/1.1" 200 -
+[2025-10-10 14:02:43] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:02:43] "GET /health HTTP/1.1" 200 -
+[2025-10-10 14:03:02] INFO [app.extract_upload:507] Processing uploaded file: Aadhar_Card.jpg
+[2025-10-10 14:03:02] INFO [app.enhance_image:100] Upscaled image from 640x770 to 1500x1804
+[2025-10-10 14:03:15] INFO [app.extract_from_image:303] ✅ Extraction successful in 13.10s - Type: aadhar
+[2025-10-10 14:03:15] INFO [app.extract_upload:519] Cleaned up: uploads/Aadhar_Card.jpg
+[2025-10-10 14:03:15] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:03:15] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 14:04:10] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:04:10] "GET /health HTTP/1.1" 200 -
+[2025-10-10 14:04:10] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:04:10] "GET /health HTTP/1.1" 200 -
+[2025-10-10 14:04:18] INFO [app.extract_upload:507] Processing uploaded file: WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 14:04:31] INFO [app.extract_from_image:303] ✅ Extraction successful in 12.85s - Type: aadhar
+[2025-10-10 14:04:31] INFO [app.extract_upload:519] Cleaned up: uploads/WhatsApp_Image_2025-10-10_at_11.20.41.jpeg
+[2025-10-10 14:04:31] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:04:31] "POST /extract-upload HTTP/1.1" 200 -
+[2025-10-10 14:10:25] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:10:25] "GET /health HTTP/1.1" 200 -
+[2025-10-10 14:10:25] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:10:25] "GET /health HTTP/1.1" 200 -
+[2025-10-10 14:10:31] INFO [app.extract_upload:507] Processing uploaded file: THRI2005.png
+[2025-10-10 14:10:31] INFO [app.enhance_image:100] Upscaled image from 742x851 to 1500x1720
+[2025-10-10 14:10:47] INFO [app.extract_from_image:303] ✅ Extraction successful in 16.58s - Type: aadhar
+[2025-10-10 14:10:47] INFO [app.extract_upload:519] Cleaned up: uploads/THRI2005.png
+[2025-10-10 14:10:47] INFO [werkzeug._log:97] 127.0.0.1 - - [10/Oct/2025 14:10:47] "POST /extract-upload HTTP/1.1" 200 -

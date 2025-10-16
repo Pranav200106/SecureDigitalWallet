@@ -1,0 +1,21 @@
+# Requirements for Hybrid OCR + LLM System
+
+# Core OCR
+easyocr>=1.7.0
+opencv-python>=4.8.0
+numpy>=1.24.0,<2.0.0
+torch>=2.0.0
+
+# LLM Integration
+openai>=1.0.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# Utilities
+pillow>=10.0.0
+
+# Flask and API
+flask>=3.0.0
+flask-cors>=4.0.0
+werkzeug>=3.0.0

@@ -29,7 +29,6 @@ import {
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from './AuthContext';
-import WalletModel3D from './WalletModel3D';
 
 const HomePage = () => {
   const theme = useTheme();
@@ -341,10 +340,10 @@ const HomePage = () => {
                       <Typography variant="body2" color="text.secondary">
                         Loading 3D Model...
                       </Typography>
-                    </Box>
-                  }>
-                    <WalletModel3D />
-                  </React.Suspense>
+                  </Box>
+                }>
+                  <img src="/images/hero.png" alt="Secure Digital Wallet" style={{ maxWidth: '100%', height: 'auto' }} />
+                </React.Suspense>
                 </Box>
               </motion.div>
             </Grid>

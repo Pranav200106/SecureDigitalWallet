@@ -1,5 +1,4 @@
 /.DS_Store
 venv/
 backend/venv/
-venv/
-backend/venv/
+backend/.env

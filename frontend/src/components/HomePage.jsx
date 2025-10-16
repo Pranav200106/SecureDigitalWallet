@@ -351,6 +351,7 @@ const HomePage = () => {
         </Container>
       </Box>
 
+
       {/* Problem Statement Section */}
       <Box sx={{ py: { xs: 8, md: 16 }, backgroundColor: colors.surface }}>
         <Container maxWidth="lg">

@@ -2,3 +2,7 @@
 venv/
 backend/venv/
 backend/.env
+# Frontend build output and temporary files
+frontend/dist/
+frontend/.vite/
+frontend/*.timestamp-*

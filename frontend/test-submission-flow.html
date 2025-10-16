@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submission Flow Test</title>
+    <script type="module">
+        // Import Firebase
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getFirestore, collection, addDoc, getDocs, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        
+        // Import CryptoJS for encryption (using CDN)
+        const CryptoJS = window.CryptoJS;
+
+        // Your Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBYQwkLnzoN7ECF1X0x7F-VWsSqqPwDbPc",
+            authDomain: "digital-b6a84.firebaseapp.com",
+            projectId: "digital-b6a84",
+            storageBucket: "digital-b6a84.firebasestorage.app",
+            messagingSenderId: "687546109945",
+            appId: "1:687546109945:web:d5ec1d0850792343777728"
+        };
+
+        const ENCRYPTION_KEY = 'secure-digital-wallet-2024';
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        console.log("✅ Firebase initialized");
+
+        // Encrypt data (same as your app)
+        function encryptData(data) {
+            const jsonString = JSON.stringify(data);
+            return CryptoJS.AES.encrypt(jsonString, ENCRYPTION_KEY).toString();
+        }
+
+        // Decrypt data (same as your app)
+        function decryptData(encryptedData) {
+            const decrypted = CryptoJS.AES.decrypt(encryptedData, ENCRYPTION_KEY);
+            const jsonString = decrypted.toString(CryptoJS.enc.Utf8);
+            return JSON.parse(jsonString);
+        }
+
+        // Test creating a submission (mimics your app's flow)
+        async function testCreateSubmission() {
+            try {
+                // Sample document data (what processDocumentImage returns)
+                const documentData = {
+                    name: "Test User",
+                    dob: "01/01/1990",
+                    address: "123 Test Street, Test City",
+                    aadhaar: "1234 5678 9012",
+                    username: "testuser",
+                    uploadedAt: new Date().toISOString()
+                };
+
+                console.log("📝 Creating submission with data:", documentData);
+                document.getElementById('createStatus').innerHTML = "Creating submission...";
+
+                // Encrypt the data
+                const encryptedData = encryptData(documentData);
+                console.log("🔒 Data encrypted, length:", encryptedData.length);
+
+                // Create submission object (same structure as your app)
+                const submission = {
+                    id: Date.now(),
+                    encryptedData: encryptedData,
+                    submittedAt: new Date().toISOString(),
+                    status: 'pending'
+                };
+
+                console.log("📤 Submission object:", {
+                    id: submission.id,
+                    hasEncryptedData: !!submission.encryptedData,
+                    encryptedDataLength: submission.encryptedData.length,
+                    status: submission.status,
+                    submittedAt: submission.submittedAt
+                });
+
+                // Add to Firestore (using timestamp as document ID, same as your app)
+                const docRef = await addDoc(collection(db, "submissions"), {
+                    encryptedData: submission.encryptedData,
+                    submittedAt: submission.submittedAt,
+                    status: submission.status
+                });
+
+                console.log("✅ Submission created with ID:", docRef.id);
+                document.getElementById('createStatus').innerHTML = `<span style="color: green;">✅ Submission created! ID: ${docRef.id}</span>`;
+
+                // Wait a moment then retrieve
+                setTimeout(testRetrieveSubmissions, 1000);
+            } catch (error) {
+                console.error("❌ Create failed:", error);
+                document.getElementById('createStatus').innerHTML = `<span style="color: red;">❌ Create failed: ${error.message}</span>`;
+            }
+        }
+
+        // Test retrieving submissions (mimics admin dashboard)
+        async function testRetrieveSubmissions() {
+            try {
+                console.log("📖 Retrieving all submissions...");
+                document.getElementById('retrieveStatus').innerHTML = "Retrieving submissions...";
+
+                const querySnapshot = await getDocs(collection(db, "submissions"));
+                console.log("✅ Retrieved", querySnapshot.size, "submissions");
+
+                let html = `<span style="color: green;">✅ Retrieved ${querySnapshot.size} submissions</span><br><br>`;
+
+                if (querySnapshot.size === 0) {
+                    html += '<div style="color: orange;">⚠️ No submissions found!</div>';
+                } else {
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        console.log("📄 Document ID:", doc.id);
+                        console.log("📄 Document data:", data);
+
+                        // Try to decrypt
+                        let decryptedData = null;
+                        let decryptError = null;
+                        try {
+                            if (data.encryptedData) {
+                                decryptedData = decryptData(data.encryptedData);
+                                console.log("🔓 Decrypted data:", decryptedData);
+                            } else {
+                                decryptError = "No encryptedData field found!";
+                                console.error("❌", decryptError);
+                            }
+                        } catch (err) {
+                            decryptError = err.message;
+                            console.error("❌ Decryption failed:", err);
+                        }
+
+                        html += `<div style="margin: 10px 0; padding: 15px; background: #f0f0f0; border-radius: 5px; border-left: 4px solid ${decryptedData ? 'green' : 'red'};">
+                            <strong>Document ID:</strong> ${doc.id}<br>
+                            <strong>Status:</strong> ${data.status || 'N/A'}<br>
+                            <strong>Submitted At:</strong> ${data.submittedAt || 'N/A'}<br>
+                            <strong>Has Encrypted Data:</strong> ${data.encryptedData ? 'Yes (' + data.encryptedData.length + ' chars)' : 'No'}<br>
+                            ${decryptedData ? `
+                                <strong style="color: green;">✅ Decryption: Success</strong><br>
+                                <strong>Decrypted Data:</strong>
+                                <pre style="background: white; padding: 10px; margin-top: 5px; border-radius: 3px;">${JSON.stringify(decryptedData, null, 2)}</pre>
+                            ` : `
+                                <strong style="color: red;">❌ Decryption: Failed</strong><br>
+                                <strong>Error:</strong> ${decryptError}
+                            `}
+                        </div>`;
+                    });
+                }
+
+                document.getElementById('retrieveStatus').innerHTML = html;
+            } catch (error) {
+                console.error("❌ Retrieve failed:", error);
+                document.getElementById('retrieveStatus').innerHTML = `<span style="color: red;">❌ Retrieve failed: ${error.message}</span>`;
+            }
+        }
+
+        // Auto-run test on page load
+        window.addEventListener('load', () => {
+            console.log("🚀 Starting submission flow test...");
+            
+            // Check if CryptoJS is loaded
+            if (typeof CryptoJS === 'undefined') {
+                document.getElementById('createStatus').innerHTML = '<span style="color: red;">❌ CryptoJS not loaded! Check console.</span>';
+                return;
+            }
+            
+            testCreateSubmission();
+        });
+
+        // Make functions available globally for manual testing
+        window.testCreateSubmission = testCreateSubmission;
+        window.testRetrieveSubmissions = testRetrieveSubmissions;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .result {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        pre {
+            background: #fff;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Submission Flow Test</h1>
+    <p>This page tests the complete submission flow: Create → Encrypt → Store → Retrieve → Decrypt</p>
+    
+    <div style="margin: 20px 0;">
+        <button onclick="testCreateSubmission()">🔄 Create New Test Submission</button>
+        <button onclick="testRetrieveSubmissions()">📖 Retrieve All Submissions</button>
+    </div>
+    
+    <div class="result">
+        <h2>Step 1: Create Submission</h2>
+        <div id="createStatus">Waiting...</div>
+    </div>
+    
+    <div class="result">
+        <h2>Step 2: Retrieve & Decrypt Submissions</h2>
+        <div id="retrieveStatus">Waiting for create to complete...</div>
+    </div>
+    
+    <div class="result">
+        <h2>📋 Instructions</h2>
+        <ol>
+            <li>Open your browser's Developer Console (F12) to see detailed logs</li>
+            <li>The test will automatically create a submission and retrieve it</li>
+            <li>Check if encryption/decryption works correctly</li>
+            <li>Compare this with your actual app's behavior</li>
+        </ol>
+        
+        <h3>What to look for:</h3>
+        <ul>
+            <li>✅ Green border = Successful decryption (data is stored correctly)</li>
+            <li>❌ Red border = Decryption failed (data structure mismatch)</li>
+            <li>Check if "encryptedData" field exists in stored documents</li>
+            <li>Verify the decrypted data matches what was submitted</li>
+        </ul>
+    </div>
+</body>
+</html>

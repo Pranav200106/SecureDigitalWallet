@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "default": "digital-b6a84",
+    "seamv2": "seamv2",
+    "seamv1": "seamv1",
+    "secure": "digital-b6a84"
+  },
+  "targets": {},
+  "etags": {}
+}

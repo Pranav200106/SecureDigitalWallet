@@ -1,0 +1,52 @@
+{
+  "name": "secureveri",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.18.0",
+    "@mui/material": "^5.16.7",
+    "@react-three/drei": "^9.92.7",
+    "@react-three/fiber": "^8.15.19",
+    "axios": "^1.12.2",
+    "crypto-js": "^4.2.0",
+    "face-api.js": "^0.22.2",
+    "firebase": "^12.3.0",
+    "framer-motion": "^11.12.0",
+    "idb": "^8.0.0",
+    "ipify": "^6.0.0",
+    "jsencrypt": "^3.3.2",
+    "localforage": "^1.10.0",
+    "lucide-react": "^0.462.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-awesome-reveal": "^4.2.14",
+    "react-dom": "^18.3.1",
+    "react-qr-scanner": "^1.0.0-alpha.11",
+    "react-router-dom": "^7.0.1",
+    "react-slick": "^0.30.2",
+    "react-webcam": "^7.2.0",
+    "realm-web": "^2.0.1",
+    "slick-carousel": "^1.8.1",
+    "tesseract.js": "^6.0.1",
+    "three": "^0.160.0",
+    "whatwg-fetch": "^3.6.20"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "vite": "^5.4.20"
+  }
+}

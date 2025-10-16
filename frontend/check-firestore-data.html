@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firestore Data Inspector</title>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBYQwkLnzoN7ECF1X0x7F-VWsSqqPwDbPc",
+            authDomain: "digital-b6a84.firebaseapp.com",
+            projectId: "digital-b6a84",
+            storageBucket: "digital-b6a84.firebasestorage.app",
+            messagingSenderId: "687546109945",
+            appId: "1:687546109945:web:d5ec1d0850792343777728"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function inspectFirestore() {
+            const results = {
+                submissions: { count: 0, docs: [], error: null },
+                documents: { count: 0, docs: [], error: null },
+                users: { count: 0, docs: [], error: null }
+            };
+
+            // Check submissions collection
+            try {
+                console.log("📖 Checking 'submissions' collection...");
+                const submissionsSnapshot = await getDocs(collection(db, "submissions"));
+                results.submissions.count = submissionsSnapshot.size;
+                submissionsSnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    results.submissions.docs.push({
+                        id: doc.id,
+                        hasEncryptedData: !!data.encryptedData,
+                        encryptedDataLength: data.encryptedData?.length || 0,
+                        status: data.status,
+                        submittedAt: data.submittedAt,
+                        allFields: Object.keys(data)
+                    });
+                });
+                console.log("✅ Submissions:", results.submissions.count);
+            } catch (error) {
+                results.submissions.error = error.message;
+                console.error("❌ Submissions error:", error);
+            }
+
+            // Check documents collection
+            try {
+                console.log("📖 Checking 'documents' collection...");
+                const documentsSnapshot = await getDocs(collection(db, "documents"));
+                results.documents.count = documentsSnapshot.size;
+                documentsSnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    results.documents.docs.push({
+                        id: doc.id,
+                        allFields: Object.keys(data)
+                    });
+                });
+                console.log("✅ Documents:", results.documents.count);
+            } catch (error) {
+                results.documents.error = error.message;
+                console.error("❌ Documents error:", error);
+            }
+
+            // Check users collection
+            try {
+                console.log("📖 Checking 'users' collection...");
+                const usersSnapshot = await getDocs(collection(db, "users"));
+                results.users.count = usersSnapshot.size;
+                usersSnapshot.forEach((doc) => {
+                    results.users.docs.push({
+                        id: doc.id,
+                        allFields: Object.keys(doc.data())
+                    });
+                });
+                console.log("✅ Users:", results.users.count);
+            } catch (error) {
+                results.users.error = error.message;
+                console.error("❌ Users error:", error);
+            }
+
+            displayResults(results);
+        }
+
+        function displayResults(results) {
+            let html = '<h2>📊 Firestore Database Status</h2>';
+
+            // Submissions
+            html += `<div class="collection ${results.submissions.error ? 'error' : 'success'}">
+                <h3>📝 Submissions Collection</h3>`;
+            
+            if (results.submissions.error) {
+                html += `<p class="error">❌ Error: ${results.submissions.error}</p>`;
+                html += `<p class="hint">💡 This usually means Firestore security rules are blocking access. Deploy the firestore.rules file!</p>`;
+            } else {
+                html += `<p><strong>Total Documents:</strong> ${results.submissions.count}</p>`;
+                
+                if (results.submissions.count === 0) {
+                    html += `<p class="warning">⚠️ No submissions found. This is why your admin dashboard is empty!</p>`;
+                    html += `<p class="hint">💡 Try uploading a document in your app to create a submission.</p>`;
+                } else {
+                    html += `<p class="success">✅ Found ${results.submissions.count} submission(s)</p>`;
+                    html += '<div class="docs">';
+                    results.submissions.docs.forEach((doc, i) => {
+                        html += `<div class="doc">
+                            <strong>Submission ${i + 1}:</strong><br>
+                            • ID: ${doc.id}<br>
+                            • Has Encrypted Data: ${doc.hasEncryptedData ? '✅ Yes' : '❌ No'}<br>
+                            • Encrypted Data Length: ${doc.encryptedDataLength} chars<br>
+                            • Status: ${doc.status || 'N/A'}<br>
+                            • Submitted At: ${doc.submittedAt || 'N/A'}<br>
+                            • Fields: ${doc.allFields.join(', ')}
+                        </div>`;
+                    });
+                    html += '</div>';
+                }
+            }
+            html += '</div>';
+
+            // Documents
+            html += `<div class="collection ${results.documents.error ? 'error' : 'success'}">
+                <h3>📄 Documents Collection</h3>`;
+            
+            if (results.documents.error) {
+                html += `<p class="error">❌ Error: ${results.documents.error}</p>`;
+            } else {
+                html += `<p><strong>Total Documents:</strong> ${results.documents.count}</p>`;
+                if (results.documents.count > 0) {
+                    html += '<div class="docs">';
+                    results.documents.docs.forEach((doc, i) => {
+                        html += `<div class="doc">
+                            <strong>Document ${i + 1}:</strong> ${doc.id}<br>
+                            • Fields: ${doc.allFields.join(', ')}
+                        </div>`;
+                    });
+                    html += '</div>';
+                }
+            }
+            html += '</div>';
+
+            // Users
+            html += `<div class="collection ${results.users.error ? 'error' : 'success'}">
+                <h3>👥 Users Collection</h3>`;
+            
+            if (results.users.error) {
+                html += `<p class="error">❌ Error: ${results.users.error}</p>`;
+            } else {
+                html += `<p><strong>Total Users:</strong> ${results.users.count}</p>`;
+            }
+            html += '</div>';
+
+            document.getElementById('results').innerHTML = html;
+        }
+
+        window.addEventListener('load', () => {
+            console.log("🚀 Starting Firestore inspection...");
+            inspectFirestore();
+        });
+
+        window.inspectFirestore = inspectFirestore;
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #333; }
+        h2 { color: #555; margin-top: 30px; }
+        h3 { color: #666; margin-top: 0; }
+        
+        .collection {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #ddd;
+        }
+        .collection.success { border-left-color: #4CAF50; }
+        .collection.error { border-left-color: #f44336; }
+        
+        .error {
+            color: #f44336;
+            background: #ffebee;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            color: #4CAF50;
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .warning {
+            color: #ff9800;
+            background: #fff3e0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .hint {
+            color: #2196F3;
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .docs {
+            margin-top: 15px;
+        }
+        .doc {
+            background: #f9f9f9;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #2196F3;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1976D2;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Firestore Data Inspector</h1>
+    
+    <div class="info-box">
+        <strong>What this tool does:</strong>
+        <ul>
+            <li>Checks all collections in your Firestore database</li>
+            <li>Shows how many documents exist in each collection</li>
+            <li>Displays the structure of stored submissions</li>
+            <li>Helps diagnose why admin dashboard might be empty</li>
+        </ul>
+    </div>
+    
+    <button onclick="inspectFirestore()">🔄 Refresh Data</button>
+    
+    <div id="results">
+        <p>Loading...</p>
+    </div>
+    
+    <div class="info-box">
+        <strong>💡 What to look for:</strong>
+        <ul>
+            <li><strong>If you see permission errors:</strong> Deploy the firestore.rules file to Firebase Console</li>
+            <li><strong>If submissions count is 0:</strong> No documents have been uploaded yet</li>
+            <li><strong>If submissions exist but admin dashboard is empty:</strong> Check browser console for decryption errors</li>
+            <li><strong>If "Has Encrypted Data" is ❌:</strong> Data structure is incorrect</li>
+        </ul>
+    </div>
+</body>
+</html>

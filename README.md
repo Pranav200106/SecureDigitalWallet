@@ -1,6 +1,8 @@
 # Secure Digital Wallet
 
 This project implements a secure digital wallet application with document scanning, face authentication, and QR verification features. It leverages a Flask backend for OCR processing using GPT-4o Vision and a React frontend for the user interface.
+<img width="1497" height="857" alt="image" src="https://github.com/user-attachments/assets/a686aa49-9f81-43da-92a1-b19d4caed03e" />
+
 
 ## Features
 
